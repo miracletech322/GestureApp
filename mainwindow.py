@@ -7,7 +7,8 @@ from ui_mainwindow import Ui_MainWindow
 from bleak import BleakScanner, BleakClient
 from qasync import asyncSlot
 
-GESTURE_CHAR_UUID = "0000xxxx-0000-1000-8000-00805f9b34fb"
+GESTURE_CHAR_UUID = "b46e428d-e64c-4c44-8020-844bb9b6e7d5"
+GESTURE_CHAR_UUID = "b46e428d-e64c-4c44-8020-844bb9b6e7d6"
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -66,12 +67,13 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "Connection Failed", str(e))
 
     def notification_handler(self, sender, data):
-        QMetaObject.invokeMethod(
-            self.ui.plainTextEdit,
-            "appendPlainText",
-            Qt.QueuedConnection,
-            Q_ARG(str, text)
-        )
+        print(data)
+        # QMetaObject.invokeMethod(
+        #     self.ui.plainTextEdit,
+        #     "appendPlainText",
+        #     Qt.QueuedConnection,
+        #     Q_ARG(str, text)
+        # )
 
     def setup_tray_icon(self):
         self.tray_icon = QSystemTrayIcon(self)
