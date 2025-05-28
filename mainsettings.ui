@@ -6,95 +6,782 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>375</width>
-    <height>170</height>
+    <width>601</width>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Gesture App Settings</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_7">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <layout class="QVBoxLayout" name="verticalLayout_19">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QCheckBox" name="chkSwipeUpYPlus">
-           <property name="text">
-            <string>Swipe Up (Y+) </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="chkSwipeDownYMinus">
-           <property name="text">
-            <string>Swipe Down (Y-) </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="chkSwipeRightXPlus">
-           <property name="text">
-            <string>Swipe Right (X+)</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="chkSwipeLeftXMinus">
-           <property name="text">
-            <string>Swipe Left (X-)</string>
-           </property>
-          </widget>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>Solo Touch</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="QCheckBox" name="chkSwipeUpYPlus">
+                 <property name="text">
+                  <string>Swipe Up (Y+) </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkSwipeDownYMinus">
+                 <property name="text">
+                  <string>Swipe Down (Y-) </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkSwipeRightXPlus">
+                 <property name="text">
+                  <string>Swipe Right (X+)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkSwipeLeftXMinus">
+                 <property name="text">
+                  <string>Swipe Left (X-)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QKeySequenceEdit" name="kseSwipeUpYPlus">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseSwipeDownYMinus">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseSwipeRightXPlus">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseSwipeLeftXMinus">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </item>
         </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QKeySequenceEdit" name="kseSwipeUpYPlus">
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="maximumSequenceLength">
-            <longLong>1</longLong>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceEdit" name="kseSwipeDownYMinus">
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="maximumSequenceLength">
-            <longLong>1</longLong>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceEdit" name="kseSwipeRightXPlus">
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="maximumSequenceLength">
-            <longLong>1</longLong>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceEdit" name="kseSwipeLeftXMinus">
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="maximumSequenceLength">
-            <longLong>1</longLong>
-           </property>
-          </widget>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>Dual Touch</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="QCheckBox" name="chkPinchIn">
+                 <property name="text">
+                  <string>Pinch In</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkPinchOut">
+                 <property name="text">
+                  <string>Pinch Out</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QKeySequenceEdit" name="ksePinchIn">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="ksePinchOut">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </item>
         </layout>
-       </item>
-      </layout>
+       </widget>
+       <widget class="QWidget" name="tab_3">
+        <attribute name="title">
+         <string>Modified Touch</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_7">
+               <item>
+                <widget class="QCheckBox" name="chkMHSwipeUp">
+                 <property name="text">
+                  <string>MH+Swipe Up</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHSwipeDown">
+                 <property name="text">
+                  <string>MH+Swipe Down</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHSwipeLeft">
+                 <property name="text">
+                  <string>MH+Swipe Left</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHSwipeRight">
+                 <property name="text">
+                  <string>MH+Swipe Right</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHTap">
+                 <property name="text">
+                  <string>MH+Tap</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHDoubleTap">
+                 <property name="text">
+                  <string>MH+Double Tap</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHTripleTap">
+                 <property name="text">
+                  <string>MH+Triple Tap</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHSwipeUp">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHSwipeDown">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHSwipeLeft">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHSwipeRight">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHDoubleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHTripleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_4">
+        <attribute name="title">
+         <string>Modifier Only</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <item>
+                <widget class="QCheckBox" name="chkModifierSwipeLeft">
+                 <property name="text">
+                  <string>Modifier Swipe Left</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkModifierSwipeRight">
+                 <property name="text">
+                  <string>Modifier Swipe Right</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkModifierSingleTap">
+                 <property name="text">
+                  <string>Modifier Single Tap</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkModifierDoubleTap">
+                 <property name="text">
+                  <string>Modifier Double Tap</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QKeySequenceEdit" name="kseModifierSwipeLeft">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseModifierSwipeRight">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseModifierSingleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseModifierDoubleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_5">
+        <attribute name="title">
+         <string>Air Mode</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_13">
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeUp">
+                 <property name="text">
+                  <string>Gesture Swipe Up</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeDown">
+                 <property name="text">
+                  <string>Gesture Swipe Down</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeLeft">
+                 <property name="text">
+                  <string>Gesture Swipe Left</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeRight">
+                 <property name="text">
+                  <string>Gesture Swipe Right</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeIn">
+                 <property name="text">
+                  <string>Gesture Swipe In</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSwipeOut">
+                 <property name="text">
+                  <string>Gesture Swipe Out</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureSingleTap">
+                 <property name="text">
+                  <string>Gesture Single Tap</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureDoubleTap">
+                 <property name="text">
+                  <string>Gesture Double Tap</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkGestureTripleTap">
+                 <property name="text">
+                  <string>Gesture Triple Tap</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeUp">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeDown">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeLeft">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeRight">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeIn">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSwipeOut">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureSingleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureDoubleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseGestureTripleTap">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_6">
+        <attribute name="title">
+         <string>Modified Air Mode</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_16">
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeUp">
+                 <property name="text">
+                  <string>MH + Gesture Swipe Up</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeDown">
+                 <property name="text">
+                  <string>MH + Gesture Swipe Down</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeLeft">
+                 <property name="text">
+                  <string>MH + Gesture Swipe Left</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeRight">
+                 <property name="text">
+                  <string>MH + Gesture Swipe Right</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeIn">
+                 <property name="text">
+                  <string>MH + Gesture Swipe In</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMHGestureSwipeOut">
+                 <property name="text">
+                  <string>MH + Gesture Swipe Out</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_17">
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeUp">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeDown">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeLeft">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeRight">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeIn">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QKeySequenceEdit" name="kseMHGestureSwipeOut">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="maximumSequenceLength">
+                  <longLong>1</longLong>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">

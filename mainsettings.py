@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QMessageBox
 from ui_mainsettings import Ui_MainSettings
 
 import json
+import os
 
 SETTINGS_FILE = "gesture_settings.json"
 
@@ -15,7 +16,7 @@ class MainSettings(QDialog):
         self.ui.btnSave.clicked.connect(self.save_settings)
         self.ui.btnClose.clicked.connect(self.close_settings)
 
-        self.load_gesture_settings()
+        self.load_settings()
     
     def save_settings(self):
         settings = {
@@ -40,24 +41,46 @@ class MainSettings(QDialog):
             json.dump(settings, f, indent=2)
         QMessageBox.information(self, "Settings Saved", "Gesture settings have been saved successfully.")
 
+    def save_settings(self):
+        data = {}
+        for name in dir(self.ui):
+            widget = getattr(self.ui, name)
+            if name.startswith("chk") and hasattr(widget, "isChecked"):
+                data[name] = {
+                    "enabled": widget.isChecked(),
+                    "key": None
+                }
+            elif name.startswith("kse") and hasattr(widget, "keySequence"):
+                related_chk = "chk" + name[3:]
+                if related_chk in data:
+                    data[related_chk]["key"] = widget.keySequence().toString()
+
+        try:
+            with open(SETTINGS_FILE, "w") as f:
+                json.dump(data, f, indent=2)
+            QMessageBox.information(self, "Saved", "Settings have been saved.")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to save settings:\n{e}")
+
     def close_settings(self):
         self.close()
 
-    def load_gesture_settings(self):
-        try:
-            with open(SETTINGS_FILE, "r") as f:
-                settings = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
+    def load_settings(self):
+        if not os.path.exists(SETTINGS_FILE):
             return
 
-        self.ui.chkSwipeUpYPlus.setChecked(settings.get("SwipeUpYPlus", {}).get("enabled", False))
-        self.ui.kseSwipeUpYPlus.setKeySequence(QKeySequence(settings.get("SwipeUpYPlus", {}).get("key", "")))
+        try:
+            with open(SETTINGS_FILE, "r") as f:
+                data = json.load(f)
 
-        self.ui.chkSwipeDownYMinus.setChecked(settings.get("SwipeDownYMinus", {}).get("enabled", False))
-        self.ui.kseSwipeDownYMinus.setKeySequence(QKeySequence(settings.get("SwipeDownYMinus", {}).get("key", "")))
+            for chk_name, config in data.items():
+                key_name = "kse" + chk_name[3:]
+                chk = getattr(self.ui, chk_name, None)
+                kse = getattr(self.ui, key_name, None)
 
-        self.ui.chkSwipeRightXPlus.setChecked(settings.get("SwipeRightXPlus", {}).get("enabled", False))
-        self.ui.kseSwipeRightXPlus.setKeySequence(QKeySequence(settings.get("SwipeRightXPlus", {}).get("key", "")))
-
-        self.ui.chkSwipeLeftXMinus.setChecked(settings.get("SwipeLeftXMinus", {}).get("enabled", False))
-        self.ui.kseSwipeLeftXMinus.setKeySequence(QKeySequence(settings.get("SwipeLeftXMinus", {}).get("key", "")))
+                if chk and hasattr(chk, "setChecked"):
+                    chk.setChecked(config.get("enabled", False))
+                if kse and hasattr(kse, "setKeySequence"):
+                    kse.setKeySequence(config.get("key", ""))
+        except Exception as e:
+            return
