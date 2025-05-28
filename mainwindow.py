@@ -4,10 +4,14 @@ from PySide6.QtGui import QIcon
 from PySide6.QtCore import QMetaObject, Qt, Q_ARG
 
 from ui_mainwindow import Ui_MainWindow
+from mainsettings import MainSettings
 from bleak import BleakScanner, BleakClient
 from qasync import asyncSlot
+from pynput.keyboard import Controller, Key
 
-GESTURE_CHAR_UUID = "b46e428d-e64c-4c44-8020-844bb9b6e7d5"
+import sys
+import time
+
 GESTURE_CHAR_UUID = "b46e428d-e64c-4c44-8020-844bb9b6e7d6"
 
 class MainWindow(QMainWindow):
@@ -15,6 +19,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.keyboard = Controller()
         self.ui.actionExitApp.triggered.connect(QApplication.instance().quit)
         self.setup_tray_icon()
         self.devices = []
@@ -24,6 +29,7 @@ class MainWindow(QMainWindow):
 
         self.ui.btnFindDevice.clicked.connect(self.find_devices)
         self.ui.btnConnectDevice.clicked.connect(self.connect_device)
+        self.ui.btnSettings.clicked.connect(self.show_settings)
 
     @asyncSlot()
     async def find_devices(self):
@@ -67,13 +73,14 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "Connection Failed", str(e))
 
     def notification_handler(self, sender, data):
-        print(data)
-        # QMetaObject.invokeMethod(
-        #     self.ui.plainTextEdit,
-        #     "appendPlainText",
-        #     Qt.QueuedConnection,
-        #     Q_ARG(str, text)
-        # )
+        decoded_str = data.decode('ascii')
+
+        QMetaObject.invokeMethod(
+            self.ui.plainTextEdit,
+            "appendPlainText",
+            Qt.QueuedConnection,
+            Q_ARG(str, decoded_str)
+        )
 
     def setup_tray_icon(self):
         self.tray_icon = QSystemTrayIcon(self)
@@ -91,6 +98,25 @@ class MainWindow(QMainWindow):
         self.tray_icon.setContextMenu(tray_menu)
 
         self.tray_icon.show()
+    def show_settings(self):
+        dlg = MainSettings()
+        dlg.exec()
+    
+    def press_key(self):
+        print("Pressing Win (or Cmd) key...")
+        # if sys.platform.startswith("win"):
+        self.keyboard.press(Key.cmd)  # Win key on Windows
+        self.keyboard.press('e')
+        self.keyboard.release(Key.cmd)
+        self.keyboard.release('e')
+        
+        # elif sys.platform.startswith("darwin"):
+        #     self.keyboard.press(Key.cmd)  # Cmd key on macOS
+        #     self.keyboard.release(Key.cmd)
+        # else:
+        #     self.keyboard.press(Key.ctrl)  # Simulate Ctrl for Linux, no "Super" in pynput
+        #     self.keyboard.release(Key.ctrl)
+
 
     # def closeEvent(self, event):
     #     event.ignore()

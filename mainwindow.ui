@@ -33,7 +33,26 @@
          </spacer>
         </item>
         <item>
+         <widget class="QPushButton" name="btnSettings">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Settings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="btnFindDevice">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>30</height>
+           </size>
+          </property>
           <property name="text">
            <string>Find Devices</string>
           </property>
@@ -41,6 +60,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnConnectDevice">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>30</height>
+           </size>
+          </property>
           <property name="text">
            <string>Connect to Device</string>
           </property>
@@ -72,26 +97,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>815</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu_File">
-    <property name="title">
-     <string>&amp;File</string>
-    </property>
-    <addaction name="actionSaveSettings"/>
-    <addaction name="actionLoadSettings"/>
-    <addaction name="separator"/>
-    <addaction name="actionExitApp"/>
-   </widget>
-   <addaction name="menu_File"/>
-  </widget>
   <action name="actionSaveSettings">
    <property name="text">
     <string>Save Settings</string>
@@ -108,6 +113,13 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>btnSettings</tabstop>
+  <tabstop>btnFindDevice</tabstop>
+  <tabstop>btnConnectDevice</tabstop>
+  <tabstop>tblDevice</tabstop>
+  <tabstop>plainTextEdit</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

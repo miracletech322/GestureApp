@@ -17,9 +17,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHBoxLayout,
-    QHeaderView, QMainWindow, QMenu, QMenuBar,
-    QPlainTextEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QHeaderView, QMainWindow, QPlainTextEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -44,13 +44,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
+        self.btnSettings = QPushButton(self.centralwidget)
+        self.btnSettings.setObjectName(u"btnSettings")
+        self.btnSettings.setMinimumSize(QSize(120, 30))
+
+        self.horizontalLayout.addWidget(self.btnSettings)
+
         self.btnFindDevice = QPushButton(self.centralwidget)
         self.btnFindDevice.setObjectName(u"btnFindDevice")
+        self.btnFindDevice.setMinimumSize(QSize(120, 30))
 
         self.horizontalLayout.addWidget(self.btnFindDevice)
 
         self.btnConnectDevice = QPushButton(self.centralwidget)
         self.btnConnectDevice.setObjectName(u"btnConnectDevice")
+        self.btnConnectDevice.setMinimumSize(QSize(120, 30))
 
         self.horizontalLayout.addWidget(self.btnConnectDevice)
 
@@ -81,18 +89,10 @@ class Ui_MainWindow(object):
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 815, 21))
-        self.menu_File = QMenu(self.menubar)
-        self.menu_File.setObjectName(u"menu_File")
-        MainWindow.setMenuBar(self.menubar)
-
-        self.menubar.addAction(self.menu_File.menuAction())
-        self.menu_File.addAction(self.actionSaveSettings)
-        self.menu_File.addAction(self.actionLoadSettings)
-        self.menu_File.addSeparator()
-        self.menu_File.addAction(self.actionExitApp)
+        QWidget.setTabOrder(self.btnSettings, self.btnFindDevice)
+        QWidget.setTabOrder(self.btnFindDevice, self.btnConnectDevice)
+        QWidget.setTabOrder(self.btnConnectDevice, self.tblDevice)
+        QWidget.setTabOrder(self.tblDevice, self.plainTextEdit)
 
         self.retranslateUi(MainWindow)
 
@@ -104,12 +104,12 @@ class Ui_MainWindow(object):
         self.actionSaveSettings.setText(QCoreApplication.translate("MainWindow", u"Save Settings", None))
         self.actionLoadSettings.setText(QCoreApplication.translate("MainWindow", u"Load Settings", None))
         self.actionExitApp.setText(QCoreApplication.translate("MainWindow", u"Exit App", None))
+        self.btnSettings.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.btnFindDevice.setText(QCoreApplication.translate("MainWindow", u"Find Devices", None))
         self.btnConnectDevice.setText(QCoreApplication.translate("MainWindow", u"Connect to Device", None))
         ___qtablewidgetitem = self.tblDevice.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Device Name", None));
         ___qtablewidgetitem1 = self.tblDevice.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Addess", None));
-        self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"&File", None))
     # retranslateUi
 

@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.vscode/
 *.py[cod]
 *$py.class
 
@@ -172,3 +173,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+gesture_settings.json
