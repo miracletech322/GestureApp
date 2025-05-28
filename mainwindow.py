@@ -87,9 +87,13 @@ class MainWindow(QMainWindow):
         self.tray_icon.setIcon(QIcon("./resources/app.png"))
 
         tray_menu = QMenu()
-        show_action = QAction("Settings", self)
-        show_action.triggered.connect(self.show)
-        tray_menu.addAction(show_action)
+        configuration_action = QAction("Device Configuration", self)
+        configuration_action.triggered.connect(self.show)
+        tray_menu.addAction(configuration_action)
+
+        settings_action = QAction("Settings", self)
+        settings_action.triggered.connect(self.show_settings)
+        tray_menu.addAction(settings_action)
 
         quit_action = QAction("Exit App", self)
         quit_action.triggered.connect(QApplication.instance().quit)
@@ -98,26 +102,23 @@ class MainWindow(QMainWindow):
         self.tray_icon.setContextMenu(tray_menu)
 
         self.tray_icon.show()
+
     def show_settings(self):
-        dlg = MainSettings()
-        dlg.exec()
+        if not hasattr(self, "_settings_dialog") or self._settings_dialog is None:
+            self._settings_dialog = MainSettings(self)
+
+        self._settings_dialog.show()
+        self._settings_dialog.raise_()
+        self._settings_dialog.activateWindow()
     
     def press_key(self):
         print("Pressing Win (or Cmd) key...")
-        # if sys.platform.startswith("win"):
-        self.keyboard.press(Key.cmd)  # Win key on Windows
-        self.keyboard.press('e')
-        self.keyboard.release(Key.cmd)
-        self.keyboard.release('e')
-        
-        # elif sys.platform.startswith("darwin"):
-        #     self.keyboard.press(Key.cmd)  # Cmd key on macOS
-        #     self.keyboard.release(Key.cmd)
-        # else:
-        #     self.keyboard.press(Key.ctrl)  # Simulate Ctrl for Linux, no "Super" in pynput
-        #     self.keyboard.release(Key.ctrl)
-
-
-    # def closeEvent(self, event):
-    #     event.ignore()
-    #     self.hide()
+        if sys.platform.startswith("win"):
+            self.keyboard.press(Key.cmd)  # Win key on Windows
+            self.keyboard.release(Key.cmd)
+        elif sys.platform.startswith("darwin"):
+            self.keyboard.press(Key.cmd)  # Cmd key on macOS
+            self.keyboard.release(Key.cmd)
+        else:
+            self.keyboard.press(Key.ctrl)  # Simulate Ctrl for Linux, no "Super" in pynput
+            self.keyboard.release(Key.ctrl)

@@ -120,7 +120,7 @@ class Ui_MainSettings(object):
     # setupUi
 
     def retranslateUi(self, MainSettings):
-        MainSettings.setWindowTitle(QCoreApplication.translate("MainSettings", u"Dialog", None))
+        MainSettings.setWindowTitle(QCoreApplication.translate("MainSettings", u"Gesture App Settings", None))
         self.chkSwipeUpYPlus.setText(QCoreApplication.translate("MainSettings", u"Swipe Up (Y+) ", None))
         self.chkSwipeDownYMinus.setText(QCoreApplication.translate("MainSettings", u"Swipe Down (Y-) ", None))
         self.chkSwipeRightXPlus.setText(QCoreApplication.translate("MainSettings", u"Swipe Right (X+)", None))

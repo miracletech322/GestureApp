@@ -6,6 +6,7 @@ from qasync import QEventLoop, asyncSlot
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(False)
 
     loop = QEventLoop(app)
     asyncio.set_event_loop(loop)

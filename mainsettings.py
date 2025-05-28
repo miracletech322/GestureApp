@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QDialog
 from PySide6.QtGui import QKeySequence
+from PySide6.QtWidgets import QMessageBox
 from ui_mainsettings import Ui_MainSettings
 
 import json
@@ -37,6 +38,7 @@ class MainSettings(QDialog):
         }
         with open(SETTINGS_FILE, "w") as f:
             json.dump(settings, f, indent=2)
+        QMessageBox.information(self, "Settings Saved", "Gesture settings have been saved successfully.")
 
     def close_settings(self):
         self.close()
@@ -59,5 +61,3 @@ class MainSettings(QDialog):
 
         self.ui.chkSwipeLeftXMinus.setChecked(settings.get("SwipeLeftXMinus", {}).get("enabled", False))
         self.ui.kseSwipeLeftXMinus.setKeySequence(QKeySequence(settings.get("SwipeLeftXMinus", {}).get("key", "")))
-
-        print("Gesture settings loaded.")

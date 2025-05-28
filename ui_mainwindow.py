@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"GestureApp Settings", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Gesture App Device Configuration", None))
         self.actionSaveSettings.setText(QCoreApplication.translate("MainWindow", u"Save Settings", None))
         self.actionLoadSettings.setText(QCoreApplication.translate("MainWindow", u"Load Settings", None))
         self.actionExitApp.setText(QCoreApplication.translate("MainWindow", u"Exit App", None))
